@@ -1,0 +1,19 @@
+name: Multiple Jobs
+
+on:
+ push:
+
+jobs:
+  test:
+     run-on: ubuntu-latest
+
+     steps:
+     - uses: actions?checkout@v4
+     - run: echo "Testing"
+
+Deploy:
+   needs: test
+   runs-on: ubuntu-latest
+
+   steps:
+   -run: echo "Deploying,only if test passed"
