@@ -6,14 +6,12 @@ on:
 jobs:
   test:
      runs-on: ubuntu-latest
-
      steps:
-     - uses: actions/checkout@v4
-     - run: echo "Testing"
+        - uses: actions/checkout@v4
+        - run: echo "Testing"
 
-deploy:
-   needs: test
-   runs-on: ubuntu-latest
-
-   steps:
-   -run: echo "Deploying,only if test passed"
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying,only if test passed"
